@@ -2,6 +2,46 @@
 <html lang="en" data-lang="en">
 <script>
   function changeLanguage(lang) {
+    if (!lang) {
+      // Detect user's location using IP-based geolocation
+      fetch('https://ipapi.co/json/')
+        .then(response => response.json())
+        .then(data => {
+          const countryCode = data.country_code;
+          if (countryCode === 'TZ') {
+            lang = 'sw'; // Set language to Swahili for Tanzania
+          } else {
+            lang = 'en'; // Default to English
+          }
+          document.documentElement.setAttribute('lang', lang);
+          document.documentElement.setAttribute('data-lang', lang);
+          // Optionally, load Google Translate script
+          loadGoogleTranslate();
+        })
+        .catch(error => {
+          console.error('Error detecting location:', error);
+          lang = 'en'; // Fallback to English
+          document.documentElement.setAttribute('lang', lang);
+          document.documentElement.setAttribute('data-lang', lang);
+        });
+    } else {
+      document.documentElement.setAttribute('lang', lang);
+      document.documentElement.setAttribute('data-lang', lang);
+    }
+  }
+
+  function loadGoogleTranslate() {
+    const script = document.createElement('script');
+    script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+    document.body.appendChild(script);
+  }
+
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({ pageLanguage: document.documentElement.getAttribute('lang') }, 'google_translate_element');
+  }
+
+  // Initialize language change on page load
+  changeLanguage();
     document.documentElement.setAttribute('lang', lang);
     document.documentElement.setAttribute('data-lang', lang);
   }
