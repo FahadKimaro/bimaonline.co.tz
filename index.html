@@ -1,51 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" data-lang="en">
-<script>
-  function changeLanguage(lang) {
-    if (!lang) {
-      // Detect user's location using IP-based geolocation
-      fetch('https://ipapi.co/json/')
-        .then(response => response.json())
-        .then(data => {
-          const countryCode = data.country_code;
-          if (countryCode === 'TZA') {
-            lang = 'sw'; // Set language to Swahili for Tanzania
-          } else {
-            lang = 'en'; // Default to English
-          }
-          document.documentElement.setAttribute('lang', lang);
-          document.documentElement.setAttribute('data-lang', lang);
-          // Optionally, load Google Translate script
-          loadGoogleTranslate();
-        })
-        .catch(error => {
-          console.error('Error detecting location:', error);
-          lang = 'en'; // Fallback to English
-          document.documentElement.setAttribute('lang', lang);
-          document.documentElement.setAttribute('data-lang', lang);
-        });
-    } else {
-      document.documentElement.setAttribute('lang', lang);
-      document.documentElement.setAttribute('data-lang', lang);
-    }
-  }
-
-  function loadGoogleTranslate() {
-    const script = document.createElement('script');
-    script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-    document.body.appendChild(script);
-  }
-
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({ pageLanguage: document.documentElement.getAttribute('lang') }, 'google_translate_element');
-  }
-
-  // Initialize language change on page load
-  changeLanguage();
-    document.documentElement.setAttribute('lang', lang);
-    document.documentElement.setAttribute('data-lang', lang);
-  }
-</script>
 
 <head>
   <meta charset="UTF-8" />
@@ -54,30 +8,26 @@
   <meta name="keywords" content="Buy insurance online Tanzania, car insurance Tanzania, motorcycle insurance Tanzania, commercial vehicle insurance Tanzania, instant insurance quotes, BimaOnline" />
   <meta name="author" content="BimaOnline" />
   <meta name="robots" content="index, follow" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-  <meta name="description" content="BimaOnline - Compare and buy insurance policies in minutes. Motorcycle, Private , and Commerical insurance – all 100% Online." />
   <link rel="icon" href="https://www.example.com/favicon.ico" type="image/x-icon" />
   <title>BimaOnline – Get Insured in Minutes</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
-    /* Disable horizontal scrolling */
     html, body {
       overflow-x: hidden;
     }
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: 'Inter', sans-serif;
     }
-
     body {
       background-color: #f9f9f9;
       color: #333;
       line-height: 1.6;
     }
-
     header {
       background: #004aad;
       color: #fff;
@@ -86,14 +36,12 @@
       justify-content: space-between;
       align-items: center;
     }
-
     nav a {
       color: #fff;
       margin-left: 20px;
       text-decoration: none;
       font-weight: 600;
     }
-
     .cta-button {
       background: #00b37e;
       color: #fff;
@@ -103,68 +51,56 @@
       font-weight: 600;
       cursor: pointer;
       transition: background 0.3s;
-      text-decoration: none; /* Removes the underline */
+      text-decoration: none;
     }
-
     .cta-button:hover {
       background: #009e6f;
     }
-
     .hero {
       padding: 80px 40px;
       background: linear-gradient(to right, #004aad, #007fff);
       color: white;
       text-align: center;
     }
-
     .hero h1 {
       font-size: 48px;
       margin-bottom: 20px;
     }
-
     .hero p {
       font-size: 20px;
       margin-bottom: 30px;
     }
-
     .fade-slide-up {
       opacity: 0;
       transform: translateY(30px);
       animation: fadeSlideUp 1s ease-out forwards;
     }
-
     @keyframes fadeSlideUp {
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
-
     .delay-1 {
       animation-delay: 0.3s;
     }
-
     .delay-2 {
       animation-delay: 0.6s;
     }
-
     .section {
       padding: 60px 40px;
       background: #fff;
     }
-
     .section-title {
       font-size: 32px;
       margin-bottom: 40px;
       text-align: center;
     }
-
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
     }
-
     .card {
       background: #f0f4f8;
       padding: 20px;
@@ -172,56 +108,59 @@
       text-align: center;
       transition: background 0.3s, transform 0.3s;
     }
-
     .card:hover {
       background: #e0ecf7;
       transform: translateY(-5px);
     }
-
     .card h3 {
       margin-top: 10px;
     }
-
     .steps {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
       text-align: center;
     }
-
     .step {
       max-width: 200px;
       margin: 20px;
     }
-
     .testimonial {
       font-style: italic;
       text-align: center;
       margin-bottom: 20px;
     }
-
     footer {
       background: #002f6c;
       color: white;
       padding: 40px;
       text-align: center;
     }
-
     .footer-links a {
       color: #ccc;
       margin: 0 10px;
       text-decoration: none;
     }
-
     @media (max-width: 768px) {
       .card-grid {
         grid-template-columns: 1fr;
       }
     }
+    @keyframes fadeSlideLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-100px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    .fade-slide-left {
+      opacity: 0;
+      animation: fadeSlideLeft 1s ease-out forwards;
+    }
   </style>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <!-- AOS Library -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -229,29 +168,10 @@
     <div style="font-size: 24px; font-weight: bold;">
       <a href="https://bimaonline.co.tz/" style="color: white; text-decoration: none;"><strong>BimaOnline</strong></a>
     </div>
-    <!-- Navigation removed as requested -->
-    </nav>
   </header>
 
   <section class="hero">
     <h1 class="fade-slide-left delay-1">Get Insured in Minutes</h1>
-    <style>
-      @keyframes fadeSlideLeft {
-        from {
-          opacity: 0;
-          transform: translateX(-100px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-
-      .fade-slide-left {
-        opacity: 0;
-        animation: fadeSlideLeft 1s ease-out forwards;
-      }
-    </style>
     <p class="fade-slide-up delay-2">Compare, choose, and buy insurance policies 100% online.</p>
     <a href="https://www.bimasokoni.co.tz/QuickQuote/QuickQuoteStartJourney?id=11&reff=MGEN33&target=94947&lang=sw" class="cta-button" style="font-size: 20px; padding: 15px 30px;">Start Now</a>
   </section>
@@ -260,25 +180,25 @@
     <h2 class="section-title" data-aos="fade-up">What Would You Like to Insure?</h2>
     <div class="card-grid">
       <div class="card" data-aos="zoom-in">
-        <a href="https://www.bimasokoni.co.tz/QuickQuote/QuickQuoteStartJourney?id=11&reff=MGEN33&target=94947&lang=sw" style="text-decoration: none; color: inherit; display: block;">
+        <a href="#" style="text-decoration: none; color: inherit; display: block;">
           <h3>🚗 Motor Private</h3>
         </a>
         <p>Affordable auto cover with quick claims.</p>
       </div>
       <div class="card" data-aos="zoom-in" data-aos-delay="100">
-        <a href="https://www.bimasokoni.co.tz/QuickQuote/QuickQuoteStartJourney?id=11&reff=MGEN33&target=94947&lang=sw" style="text-decoration: none; color: inherit; display: block;">
+        <a href="#" style="text-decoration: none; color: inherit; display: block;">
           <h3>🏍️ Motorcycle</h3>
         </a>
-        <p>Be Convident with your bike.</p>
+        <p>Be Confident with your bike.</p>
       </div>
       <div class="card" data-aos="zoom-in" data-aos-delay="200">
-        <a href="https://www.bimasokoni.co.tz/QuickQuote/QuickQuoteStartJourney?id=11&reff=MGEN33&target=94947&lang=sw" style="text-decoration: none; color: inherit; display: block;">
+        <a href="#" style="text-decoration: none; color: inherit; display: block;">
           <h3>🚌 Passenger Vehicle</h3>
         </a>
         <p>Stay covered wherever you go.</p>
       </div>
       <div class="card" data-aos="zoom-in" data-aos-delay="300">
-        <a href="https://www.bimasokoni.co.tz/QuickQuote/QuickQuoteStartJourney?id=11&reff=MGEN33&target=94947&lang=sw" style="text-decoration: none; color: inherit; display: block;">
+        <a href="#" style="text-decoration: none; color: inherit; display: block;">
           <h3>🚛 Commercial Vehicle</h3>
         </a>
         <p>Protect your Vehicle with ease.</p>
@@ -327,7 +247,47 @@
     </div>
   </footer>
 
-  <!-- AOS Script -->
+  <!-- Language Script -->
+  <script>
+    function changeLanguage(lang) {
+      if (!lang) {
+        fetch('https://ipapi.co/json/')
+          .then(response => response.json())
+          .then(data => {
+            lang = data.country_code === 'TZA' ? 'sw' : 'en';
+            document.documentElement.setAttribute('lang', lang);
+            document.documentElement.setAttribute('data-lang', lang);
+            loadGoogleTranslate();
+          })
+          .catch(error => {
+            console.error('Error detecting location:', error);
+            lang = 'en';
+            document.documentElement.setAttribute('lang', lang);
+            document.documentElement.setAttribute('data-lang', lang);
+          });
+      } else {
+        document.documentElement.setAttribute('lang', lang);
+        document.documentElement.setAttribute('data-lang', lang);
+      }
+    }
+
+    function loadGoogleTranslate() {
+      const script = document.createElement('script');
+      script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+      document.body.appendChild(script);
+    }
+
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: document.documentElement.getAttribute('lang')
+      }, 'google_translate_element');
+    }
+
+    // Run on page load
+    changeLanguage();
+  </script>
+
+  <!-- AOS Animation -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({
@@ -336,5 +296,4 @@
     });
   </script>
 </body>
-
 </html>
