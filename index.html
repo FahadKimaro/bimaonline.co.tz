@@ -89,15 +89,15 @@
     }
 
     nav a {
-      color: #ffffff;
+      color: #fff;
       margin-left: 20px;
       text-decoration: none;
       font-weight: 600;
     }
 
     .cta-button {
-      background: #00b37e;
-      color: #ffffff;
+      background: #3dbf79;
+      color: #fff;
       padding: 10px 20px;
       border: none;
       border-radius: 8px;
@@ -108,7 +108,7 @@
     }
 
     .cta-button:hover {
-      background: #009e6f;
+      background: #3dbf79;
     }
 
     .hero {
@@ -151,7 +151,7 @@
 
     .section {
       padding: 60px 40px;
-      background: #ffffff;
+      background: #fff;
     }
 
     .section-title {
@@ -167,7 +167,7 @@
     }
 
     .card {
-      background: #ffffff;
+      background: #f0f4f8;
       padding: 20px;
       border-radius: 12px;
       text-align: center;
@@ -175,7 +175,7 @@
     }
 
     .card:hover {
-      background: #ffffff;
+      background: #e0ecf7;
       transform: translateY(-5px);
     }
 
@@ -202,7 +202,7 @@
     }
 
     footer {
-      background: #3dbf79;
+      background: #1b1919;
       color: white;
       padding: 40px;
       text-align: center;
@@ -254,7 +254,14 @@
       }
     </style>
     <p class="fade-slide-up delay-2">Compare, choose, and buy insurance policies 100% online.</p>
-    <a href="https://www.bimasokoni.co.tz/QuickQuote/QuickQuoteStartJourney?id=11&reff=MGEN33&target=94947&lang=sw" class="cta-button" style="font-size: 20px; padding: 15px 30px; background-color: #231f20;">Start Now</a>
+    <a href="https://www.bimasokoni.co.tz/QuickQuote/QuickQuoteStartJourney?id=11&reff=MGEN33&target=94947&lang=sw" 
+       class="cta-button" 
+       style="font-size: 20px; padding: 15px 30px; background-color: #231f20; transition: transform 0.2s, box-shadow 0.2s;" 
+       onmousedown="this.style.transform='scale(0.95)'; this.style.boxShadow='0 4px 8px rgba(0, 0, 0, 0.2)';" 
+       onmouseup="this.style.transform='scale(1)'; this.style.boxShadow='none';" 
+       onmouseleave="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+       Start Now
+    </a>
   </section>
 
   <section class="section">
@@ -315,7 +322,27 @@
   <section class="hero">
     <h2 data-aos="fade-up">Ready to get covered?</h2>
     <p data-aos="fade-up" data-aos-delay="100">Choose a plan and get insured in just a few clicks.</p>
-    <a href="https://www.bimasokoni.co.tz/QuickQuote/QuickQuoteStartJourney?id=11&reff=MGEN33&target=94947&lang=sw" class="cta-button" data-aos="zoom-in">Start Now</a>
+    <a href="https://www.bimasokoni.co.tz/QuickQuote/QuickQuoteStartJourney?id=11&reff=MGEN33&target=94947&lang=sw" 
+       class="cta-button" 
+       style="background-color: #231f20; transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;" 
+       data-aos="zoom-in"
+       onmousedown="this.style.animation='shake 0.3s'; this.style.animationIterationCount='1';" 
+       onmouseup="this.style.animation='none';" 
+       onmouseleave="this.style.animation='none';" 
+       onmouseover="this.style.backgroundColor='#3dbf79';" 
+       onmouseout="this.style.backgroundColor='#231f20';">
+       Start Now
+    </a>
+    <style>
+      @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      50% { transform: translateX(5px); }
+      75% { transform: translateX(-5px); }
+      100% { transform: translateX(0); }
+      }
+    </style>
+    </a>
     <a href="mailto:talktous@bimaonline.co.tz?subject=Inquiry%20from%20BimaOnline%20Website" class="cta-button" style="background:#ffffff;color:#004aad;margin-left:10px;" data-aos="zoom-in" data-aos-delay="200">Talk to Us</a>
   </section>
 
