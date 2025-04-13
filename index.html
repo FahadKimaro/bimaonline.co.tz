@@ -7,7 +7,27 @@
   <meta name="description" content="BimaOnline - Compare and buy insurance policies in minutes. Motorcycle, Private , and Commerical insurance – all 100% Online." />
   <link rel="icon" href="https://www.example.com/favicon.ico" type="image/x-icon" />
   <title>BimaOnline – Be Insured in Minutes</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .logo span {
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff;
+    }
+  </style>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- AOS Library -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -47,6 +67,7 @@
       font-weight: 600;
       cursor: pointer;
       transition: background 0.3s;
+      text-decoration: none; /* Removes the underline */
     }
 
     .cta-button:hover {
@@ -113,6 +134,12 @@
       padding: 20px;
       border-radius: 12px;
       text-align: center;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .card:hover {
+      background: #e0ecf7;
+      transform: translateY(-5px);
     }
 
     .card h3 {
@@ -149,6 +176,12 @@
       margin: 0 10px;
       text-decoration: none;
     }
+
+    @media (max-width: 768px) {
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 
@@ -161,7 +194,7 @@
       <a href="#">FAQs</a>
       <a href="#">Blog</a>
       <a href="#">Contact</a>
-      <button class="cta-button">Get a Quote</button>
+      <a href="https://www.bimasokoni.co.tz/QuickQuote/QuickQuoteStartJourney?id=11&reff=MGEN33&target=94947&lang=sw" class="cta-button">Get a Quote</a>
     </nav>
   </header>
 
@@ -169,19 +202,19 @@
     <h1 class="fade-slide-left delay-1">Get Insured in Minutes</h1>
     <style>
       @keyframes fadeSlideLeft {
-      from {
-        opacity: 0;
-        transform: translateX(-100px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
+        from {
+          opacity: 0;
+          transform: translateX(-100px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
       }
 
       .fade-slide-left {
-      opacity: 0;
-      animation: fadeSlideLeft 1s ease-out forwards;
+        opacity: 0;
+        animation: fadeSlideLeft 1s ease-out forwards;
       }
     </style>
     <p class="fade-slide-up delay-2">Compare, choose, and buy insurance policies 100% online.</p>
@@ -189,66 +222,57 @@
   </section>
 
   <section class="section">
-    <h2 class="section-title">What Would You Like to Insure?</h2>
+    <h2 class="section-title" data-aos="fade-up">What Would You Like to Insure?</h2>
     <div class="card-grid">
-      <div class="card">
-        <h3><a href="https://www.bimasokoni.co.tz/QuickQuote/QuickQuoteStartJourney?id=11&reff=MGEN33&target=94947&lang=sw" style="text-decoration: none; color: inherit;">🚗 Car Insurance</a></h3>
+      <div class="card" data-aos="zoom-in">
+        <h3><a href="https://www.bimasokoni.co.tz/QuickQuote/QuickQuoteStartJourney?id=11&reff=MGEN33&target=94947&lang=sw" style="text-decoration: none; color: inherit;">🏍️ Motorcycle</a></h3>
         <p>Affordable auto cover with quick claims.</p>
       </div>
-      <div class="card">
-        <h3>🏍️ Motorcycle Insurance</h3>
+      <div class="card" data-aos="zoom-in" data-aos-delay="100">
+        <h3><a href="https://www.bimasokoni.co.tz/QuickQuote/QuickQuoteStartJourney?id=11&reff=MGEN33&target=94947&lang=sw" style="text-decoration: none; color: inherit;">🚗 Motor Private</a></h3>
         <p>Peace of mind for you and your bike.</p>
       </div>
-      <div class="card">
-        <h3><a href="https://www.bimasokoni.co.tz/QuickQuote/QuickQuoteStartJourney?id=11&reff=MGEN33&target=94947&lang=sw" style="text-decoration: none; color: inherit;">🚌 Bus Insurance</a></h3>
+      <div class="card" data-aos="zoom-in" data-aos-delay="200">
+        <h3><a href="https://www.bimasokoni.co.tz/QuickQuote/QuickQuoteStartJourney?id=11&reff=MGEN33&target=94947&lang=sw" style="text-decoration: none; color: inherit;">🚌 Passenger Vehicle</a></h3>
         <p>Stay covered wherever you go.</p>
       </div>
-      <div class="card">
-        <h3><a href="https://www.bimasokoni.co.tz/QuickQuote/QuickQuoteStartJourney?id=11&reff=MGEN33&target=94947&lang=sw" style="text-decoration: none; color: inherit;">🚛 Truck Insurance</a></h3>
+      <div class="card" data-aos="zoom-in" data-aos-delay="300">
+        <h3><a href="https://www.bimasokoni.co.tz/QuickQuote/QuickQuoteStartJourney?id=11&reff=MGEN33&target=94947&lang=sw" style="text-decoration: none; color: inherit;">🚛 Commerical Vehicle</a></h3>
         <p>Protect your Vehicle with ease.</p>
       </div>
     </div>
   </section>
 
   <section class="section">
-    <h2 class="section-title">Why BimaOnline?</h2>
+    <h2 class="section-title" data-aos="fade-up">Why BimaOnline?</h2>
     <div class="card-grid">
-      <div class="card">✅ Instant Quotes</div>
-      <div class="card">✅ Secure & Trusted Partners</div>
-      <div class="card">✅ Digital Policy Delivery</div>
-      <div class="card">✅ Expert Support</div>
+      <div class="card" data-aos="fade-up">✅ Instant Quotes</div>
+      <div class="card" data-aos="fade-up" data-aos-delay="100">✅ Secure & Trusted Partners</div>
+      <div class="card" data-aos="fade-up" data-aos-delay="200">✅ Digital Policy Delivery</div>
+      <div class="card" data-aos="fade-up" data-aos-delay="300">✅ Expert Support</div>
     </div>
   </section>
 
   <section class="section">
-    <h2 class="section-title">How It Works</h2>
+    <h2 class="section-title" data-aos="fade-up">How It Works</h2>
     <div class="steps">
-      <div class="step">
-        <h3>1. Choose Cover</h3>
-        <p>Select the right insurance product for you.</p>
-      </div>
-      <div class="step">
-        <h3>2. Compare & Pay</h3>
-        <p>Instant quotes, transparent pricing.</p>
-      </div>
-      <div class="step">
-        <h3><a href="https://www.bimasokoni.co.tz/QuickQuote/QuickQuoteStartJourney?id=11&reff=MGEN33&target=94947&lang=sw" style="text-decoration: none; color: inherit;">3. Get Your Policy</a></h3>
-        <p>Receive your digital policy instantly.</p>
-      </div>
+      <div class="step" data-aos="fade-up"> <h3>1. Choose Cover</h3> <p>Select the right insurance product for you.</p> </div>
+      <div class="step" data-aos="fade-up" data-aos-delay="100"> <h3>2. Compare & Pay</h3> <p>Instant quotes, transparent pricing.</p> </div>
+      <div class="step" data-aos="fade-up" data-aos-delay="200"> <h3>3. Get Your Policy</h3> <p>Receive your digital policy instantly.</p> </div>
     </div>
   </section>
 
   <section class="section">
-    <h2 class="section-title">What Our Customers Say</h2>
-    <div class="testimonial">“Fast, easy, and reliable. BimaOnline helped me insure my car in 5 minutes!” – Happy Client</div>
-    <div class="testimonial">“I love how everything is online. Super convenient for motor insurance.” – Digna from Arusha</div>
+    <h2 class="section-title" data-aos="fade-up">What Our Customers Say</h2>
+    <div class="testimonial" data-aos="fade-right">“Fast, easy, and reliable. BimaOnline helped me insure my car in 5 minutes!” – Happy Client</div>
+    <div class="testimonial" data-aos="fade-left" data-aos-delay="100">“I love how everything is online. Super convenient for motor insurance.” – Jane from Arusha</div>
   </section>
 
   <section class="hero">
-    <h2>Ready to get covered?</h2>
-    <p>Choose a plan and get insured in just a few clicks.</p>
-    <a href="https://www.bimasokoni.co.tz/QuickQuote/QuickQuoteStartJourney?id=11&reff=MGEN33&target=94947&lang=sw" class="cta-button">Start Now</a>
-    <button class="cta-button" style="background:#ffffff;color:#004aad;margin-left:10px;">Talk to Us</button>
+    <h2 data-aos="fade-up">Ready to get covered?</h2>
+    <p data-aos="fade-up" data-aos-delay="100">Choose a plan and get insured in just a few clicks.</p>
+    <a href="https://www.bimasokoni.co.tz/QuickQuote/QuickQuoteStartJourney?id=11&reff=MGEN33&target=94947&lang=sw" class="cta-button" data-aos="zoom-in">Start Now</a>
+    <button class="cta-button" style="background:#ffffff;color:#004aad;margin-left:10px;" data-aos="zoom-in" data-aos-delay="200">Talk to Us</button>
   </section>
 
   <footer>
@@ -259,6 +283,15 @@
       <a href="#">Regulatory Info</a>
     </div>
   </footer>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
 </body>
 
 </html>
