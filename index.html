@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+  <html lang="en" data-lang="en">
+    <head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-K1K9H2SGZE"></script>
 <script>
@@ -9,58 +11,6 @@
   gtag('config', 'G-K1K9H2SGZE');
 </script>
 
-<html lang="en" data-lang="en">
-<script>
-  function changeLanguage(lang) {
-    if (!lang) {
-      // Detect user's location using IP-based geolocation
-      fetch('https://ipapi.co/json/')
-        .then(response => response.json())
-        .then(data => {
-          const countryCode = data.country_code;
-          if (countryCode === 'TZA') {
-            lang = 'sw'; // Set language to Swahili for Tanzania
-          } else {
-            lang = 'en'; // Default to English
-          }
-          window.addEventListener('DOMContentLoaded', () => {
-    changeLanguage();
-  });
-          // Optionally, load Google Translate script
-          loadGoogleTranslate();
-        })
-        .catch(error => {
-          console.error('Error detecting location:', error);
-          lang = 'en'; // Fallback to English
-          document.documentElement.setAttribute('lang', lang);
-          document.documentElement.setAttribute('data-lang', lang);
-        });
-    } else {
-      document.documentElement.setAttribute('lang', lang);
-      document.documentElement.setAttribute('data-lang', lang);
-    }
-  }
-
-  function loadGoogleTranslate() {
-    const script = document.createElement('script');
-    script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-    document.body.appendChild(script);
-  }
-
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({ pageLanguage: document.documentElement.getAttribute('lang') }, 'google_translate_element');
-  }
-
-  // Initialize language change on page load
-  // changeLanguage();
-    // document.documentElement.setAttribute('lang', lang);
-    // document.documentElement.setAttribute('data-lang', lang);
-    console.log('bimaonline console');
-    console.log('bimaonline conso ' );
-
-</script>
-
-<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <meta name="description" content="BimaOnline - Compare and buy insurance policies online. Get instant quotes for motorcycle, private, and commercial vehicle insurance." />
@@ -70,9 +20,7 @@
   madai ya bima, bima ya gari online , nunua bima mtandaoni Tanzania, bima ya kusafiri Tanzania" />
   <meta name="author" content="BimaOnline" />
   <meta name="robots" content="index, follow" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-  <meta name="description" content="BimaOnline - Compare and buy insurance policies in minutes. Motorcycle, Private , and Commerical insurance – all 100% Online." />
-  <link rel="icon" href="https://www.example.com/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="https://raw.githubusercontent.com/FahadKimaro/bimaonline.co.tz/main/favicon.ico" type="image/x-icon" />
   <title>BimaOnline – Get Insured in Minutes</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
