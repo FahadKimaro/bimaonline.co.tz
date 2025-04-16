@@ -203,6 +203,14 @@
         grid-template-columns: 1fr;
       }
     }
+  
+      @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      50% { transform: translateX(5px); }
+      75% { transform: translateX(-5px); }
+      100% { transform: translateX(0); }
+      }
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <!-- AOS Library -->
@@ -292,7 +300,7 @@
       <i class="fab fa-linkedin"></i>
       </a>
       <a href="https://x.com/bimaonlinetz?s=21" target="_blank" aria-label="Twitter" style="font-size: 24px;">
-        <i class="fa-brands fa-x-twitter"></i>
+        <i class="fa-brands fa-twitter"></i>
       </a>
     </nav>
     
@@ -370,6 +378,7 @@
         <p>Confident cover starts here</p>
       </div>
     </div>
+
   </section>
 
   <section class="section">
@@ -398,32 +407,22 @@
   </section>
 
   <section class="hero">
-    <h2 data-aos="fade-up">Ready to get covered?</h2>
-    <p data-aos="fade-up" data-aos-delay="100">Don’t Wait for an Incident to Realize You Need Insurance.</p>
-    <a href="https://www.bimasokoni.co.tz/QuickQuote/QuickQuoteStartLeadDetails?id=11&reff=MGEN33&target=&lang=en" 
+    <h2 data-aos="fade-up">Ready to Learn About Motor Claims Tips?</h2>
+    <p data-aos="fade-up" data-aos-delay="100">Don’t Wait for an Incident to Realize You lean about Insurance.</p>
+    <a href="BlogPage.html" 
        class="cta-button" 
        style="background-color: #231f20; transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;" 
        data-aos="zoom-in"
        onmousedown="this.style.animation='shake 0.3s'; this.style.animationIterationCount='1';" 
        onmouseup="this.style.animation='none';" 
        onmouseleave="this.style.animation='none';" 
-       onmouseover="this.style.backgroundColor='#3dbf79';" 
-       onmouseout="this.style.backgroundColor='#231f20';" 
-       target="_blank">
-       Start Now
-      </a>
-     
-    <style>
-      @keyframes shake {
-      0% { transform: translateX(0); }
-      25% { transform: translateX(-5px); }
-      50% { transform: translateX(5px); }
-      75% { transform: translateX(-5px); }
-      100% { transform: translateX(0); }
-      }
-    </style>
+       onmouseover="this.style.backgroundColor='black';" 
+       onmouseout="this.style.backgroundColor='#231f20';">
+       Learn Here
     </a>
-    <a href="mailto:talktous@bimaonline.co.tz?subject=Inquiry%20from%20BimaOnline%20Website" class="cta-button" style="background:#ffffff;color:#004aad;margin-left:10px;" data-aos="zoom-in" data-aos-delay="200">Talk to Us</a>
+    <a href="mailto:talktous@bimaonline.co.tz?subject=Inquiry%20from%20BimaOnline%20Website" 
+    class="cta-button" style="background:#ffffff;color:#004aad;margin-left:10px;" 
+    data-aos="zoom-in" data-aos-delay="200">Talk to Us</a>
   </section>
 
   <footer>
