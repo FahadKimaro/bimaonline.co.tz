@@ -78,33 +78,23 @@
   margin-right: 2px;
 }
 
-.static {
+.typewriter {
   display: inline-block;
-  margin-right: 2px;
+  color: black;
+  font-family: inherit;
 }
 
-.typewriter {
+.typing {
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
   vertical-align: bottom;
-  color: #231f20;
-  animation: typing 1s steps(100, end), blinkCursor 0.7s step-end infinite;
-  animation-delay: 100s, 10s;
-  
-  
 }
 
 @keyframes typing {
-  0% { width: 0; }
-  100% { width: 8ch; }
-
-}
-
-@keyframes blinkCursor {
-  0%, 100% { border-color: transparent; }
-  50% { border-color: black; }
-
+  0%   { width: 0ch; }
+  100% { width: 7ch; } /* "inutes" is 7 characters */
+  
 }
 
 
@@ -150,11 +140,6 @@
       padding: 20px;
     }
 
-      h2.section-title {
-        font-size: 25px;
-        margin-bottom: 20px;
-        padding: 20px
-    }
 
     .fade-slide-up {
       opacity: 0;
@@ -397,14 +382,12 @@
   </header>
 
   <section class="hero">
+
     <h1 class="fade-slide-left delay-1">
       Buy Motor Insurance in <span class="static">5</span>
-      <span class="typewriter-container">
-        <span class="typewriter">Minutes!</span>
-      </span>
+      <span class="typewriter">Minutes</span>
     </h1>
-    
-    
+
     <style>
       @keyframes fadeSlideLeft {
         from {
@@ -434,7 +417,7 @@
     </a>
 
 
-  <p class="fade-slide-up delay-2">Not sure how insurance works? 😊 No worries.</p>
+  <p class="fade-slide-up delay-2">Not sure how insurance works?  No worries.</p>
   <a href="MotorInsuranceTips.html" 
      class="cta-button" 
      style="font-size: 20px; padding: 15px 30px; background-color: #231f20; transition: transform 0.2s, box-shadow 0.2s;" 
@@ -518,20 +501,23 @@
   <section class="hero2">
     <h2 data-aos="fade-up">Ready to Learn About Motor Claims Tips?</h2>
     <p data-aos="fade-up" data-aos-delay="100">Don’t wait for an accident and realize you need to learn about claims.</p>
-    <a href="MotorInsuranceTips.html" 
-       class="cta-button2" 
-       style="background-color: #231f20; transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;" 
-       data-aos="zoom-in"
-       onmousedown="this.style.animation='shake 0.3s'; this.style.animationIterationCount='1';" 
-       onmouseup="this.style.animation='none';" 
-       onmouseleave="this.style.animation='none';" 
-       onmouseover="this.style.backgroundColor='black';" 
-       onmouseout="this.style.backgroundColor='#231f20';">
-       Learn Here
-    </a>
-    <a href="mailto:talktous@bimaonline.co.tz?subject=Inquiry%20from%20BimaOnline%20Website" 
-    class="cta-button2" style="background:#ffffff;color:#004aad;margin-left:10px;" 
-    data-aos="zoom-in" data-aos-delay="200">Talk to Us</a>
+    <div style="margin-top: 20px;" data-aos="zoom-in">
+      <a href="MotorInsuranceTips.html" 
+         class="cta-button2" 
+         style="background-color: #231f20; transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;" 
+         onmousedown="this.style.animation='shake 0.3s'; this.style.animationIterationCount='1';" 
+         onmouseup="this.style.animation='none';" 
+         onmouseleave="this.style.animation='none';" 
+         onmouseover="this.style.backgroundColor='black';" 
+         onmouseout="this.style.backgroundColor='#231f20';">
+         Learn Here
+      </a>
+      
+      <a href="mailto:talktous@bimaonline.co.tz?subject=Inquiry%20from%20BimaOnline%20Website" 
+         class="cta-button2" 
+         style="background:#ffffff;color:#004aad;margin-left:10px;" 
+         data-aos="zoom-in" data-aos-delay="200">Talk to Us</a>
+    </div>
   </section>
 
   <footer>
