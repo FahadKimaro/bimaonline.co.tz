@@ -73,6 +73,41 @@
       align-items: center;
     }
 
+    .static {
+  display: inline-block;
+  margin-right: 2px;
+}
+
+.static {
+  display: inline-block;
+  margin-right: 2px;
+}
+
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: bottom;
+  color: #231f20;
+  animation: typing 1s steps(100, end), blinkCursor 0.7s step-end infinite;
+  animation-delay: 100s, 10s;
+  
+  
+}
+
+@keyframes typing {
+  0% { width: 0; }
+  100% { width: 8ch; }
+
+}
+
+@keyframes blinkCursor {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: black; }
+
+}
+
+
     nav a {
       color: #fff;
       margin-left: 10px;
@@ -104,8 +139,9 @@
     }
 
     .hero h1 {
-      font-size: 48px;
+      font-size: 60px;
       margin-bottom: 20px;
+      text-align: center;
     }
 
     .hero p {
@@ -184,7 +220,7 @@
     h2.section-title {
       font-size: 25px;
       margin-bottom: 20px;
-      padding: 20px;
+      padding: 30px;
     }
 
     section.hero {
@@ -341,7 +377,7 @@
       </a>
     </div>
     <nav style="display: flex; gap: 15px; margin-left: auto;">
-      <a href="https://www.instagram.com/bimaonlinetz?igsh=YWdxNW5lZno3MzM1&utm_source=qr" target="_blank" aria-label="Instagram" style="font-size: 24px;">
+      <a href="https://www.instagram.com" target="_blank" aria-label="Instagram" style="font-size: 24px;">
       <i class="fab fa-instagram"></i>
       </a>
       <a href="https://www.instagram.com/bimaonlinetz?igsh=YWdxNW5lZno3MzM1&utm_source=qr" target="_blank" aria-label="Facebook" style="font-size: 24px;">
@@ -361,8 +397,14 @@
   </header>
 
   <section class="hero">
-    <h1 class="fade-slide-left delay-1">Buy Motor Insurance in 5 Minutes</h1>
-    <h1 class="fade-slide-left delay-1"></h1>
+    <h1 class="fade-slide-left delay-1">
+      Buy Motor Insurance in <span class="static">5</span>
+      <span class="typewriter-container">
+        <span class="typewriter">Minutes!</span>
+      </span>
+    </h1>
+    
+    
     <style>
       @keyframes fadeSlideLeft {
         from {
