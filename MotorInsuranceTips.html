@@ -217,34 +217,43 @@
     
   </script>
   <!-- RSS Fetching Script -->
-
 <div id="loading-spinner">Loading posts...</div>
-<div id="medium-posts"></div>
 
 <script>
   async function fetchMediumPosts() {
-    const url = `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@bimaonline`;
+    const url = `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@bimaonline&_=${new Date().getTime()}`; // cache buster
+    const container = document.getElementById('medium-posts');
+    const loader = document.getElementById('loading-spinner');
+
     try {
       const res = await fetch(url);
       const data = await res.json();
-      const container = document.getElementById('medium-posts');
-      const loader = document.getElementById('loading-spinner');
 
-      loader.style.display = 'none';
+      loader.style.display = 'none'; // hide loader once response received
       container.innerHTML = '';
 
-      data.items.slice(0, 100).forEach(post => {
-        const article = document.createElement('article');
-        article.innerHTML = `
-          <h3><a href="${post.link}" target="_blank">${post.title}</a></h3>
-          <p style="font-size:1.2rem;">${post.description.slice(0, 400)}...</p>
-          <a href="${post.link}" target="_blank" class="read-more">Soma Zaidi...</a>
-        `;
-        container.appendChild(article);
-      });
+      if (!data.items || data.items.length === 0) {
+        container.innerHTML = '<p>No posts found.</p>';
+        return;
+      }
+
+      data.items
+        .filter(post => post.categories && post.categories.length > 0)
+        .slice(0, 5)
+        .forEach(post => {
+            const article = document.createElement('article');
+            article.innerHTML = `
+            <h3><a href="${post.link}" target="_blank">${post.title}</a></h3>
+            <p style="font-size:1.2rem;">${post.description.slice(0, 400)}...</p>
+            <a href="${post.link}" target="_blank" class="read-more">Soma Zaidi...</a>
+            `;
+    container.appendChild(article);
+  });
+
     } catch (error) {
-      document.getElementById('loading-spinner').style.display = 'none';
-      document.getElementById('medium-posts').innerHTML = `<div id="error-message">Failed to load Medium posts. Please try again later.</div>`;
+      loader.style.display = 'none'; // ensure we hide spinner even if there's an error
+      container.innerHTML = '<p>Failed to load Medium posts. Please try again later.</p>';
+      console.error('Error fetching Medium posts:', error);
     }
   }
 
