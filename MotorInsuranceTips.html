@@ -130,6 +130,7 @@
       }
       h1 {
         font-size: 1.8rem;
+        text-decoration:#3dbf79;
       }
     }
 
@@ -259,6 +260,103 @@
 
   fetchMediumPosts();
 </script>
+<style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+      color: #1da1f2;
+    }
+    .tweet {
+      display: flex;
+      gap: 12px;
+      padding: 16px;
+      background: #f1f8ff;
+      border-left: 4px solid #1da1f2;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      align-items: flex-start;
+      transition: transform 0.2s ease;
+    }
+    .tweet:hover {
+      transform: scale(1.01);
+      background-color: #e9f4ff;
+    }
+    .tweet img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .tweet-content {
+      flex: 1;
+    }
+    .tweet p {
+      margin: 0 0 6px 0;
+    }
+    .tweet .tweet-meta {
+      font-size: 0.85rem;
+      color: #666;
+    }
+    .tweet a {
+      font-weight: bold;
+      color: #1da1f2;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
 
+  <h1>BimaonlineTZ Tweets</h1>
+  <div id="twitter-posts"></div>
+
+  <script>
+    function fetchTwitterRSS() {
+      const url = `https://api.rss2json.com/v1/api.json?rss_url=https://rss.app/feeds/QtMOD3lpHUpHa4PK.xml&_=${new Date().getTime()}`;
+      const container = document.getElementById('twitter-posts');
+
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          container.innerHTML = '';
+
+          if (!data.items || data.items.length === 0) {
+            container.innerHTML = '<p>No tweets found.</p>';
+            return;
+          }
+
+          data.items.slice(0, 5).forEach(tweet => {
+            const tweetEl = document.createElement('div');
+            tweetEl.className = 'tweet';
+            
+            const image = tweet.thumbnail || 'https://tinyurl.com/7wzxfzda';
+
+            tweetEl.innerHTML = `
+              <img src="${image}" alt="Profile">
+              <div class="tweet-content">
+                <p>${tweet.description}</p>
+                <div class="tweet-meta">Tweeted on ${new Date(tweet.pubDate).toLocaleDateString()}</div>
+                <a href="${tweet.link}" target="_blank">View on Twitter</a>
+              </div>
+            `;
+            container.appendChild(tweetEl);
+          });
+        })
+        .catch(error => {
+          console.error('Failed to fetch tweets:', error);
+          container.innerHTML = '<p>Unable to load tweets at this time.</p>';
+        });
+    }
+
+    fetchTwitterRSS();
+    setInterval(fetchTwitterRSS, 2 * 60 * 60 * 1000); // Refresh every 2 hours
+  </script>
 </body>
+
 </html>
