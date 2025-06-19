@@ -1,67 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage -->
   <url>
-    
     <loc>https://bimaonline.co.tz/</loc>
-    <lastmod>2025-04-15T11:22:18+00:00</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2025-06-19</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
-  
+
+  <!-- Motor Insurance Tips Page -->
   <url>
-    <loc>https://bimaonline.co.tz/motor-private</loc>
-    <lastmod>2025-04-15T11:22:18+00:00</lastmod>
+    <loc>https://bimaonline.co.tz/MotorInsuranceTips.html</loc>
+    <lastmod>2025-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
+  <!-- Bima Types (All lead to external site but listed for reference) -->
   <url>
-    <loc>https://bimaonline.co.tz/motorcycle</loc>
-    <lastmod>2025-04-15T11:22:18+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.bimasokoni.co.tz/QuickQuote/QuickQuoteStartLeadDetails?id=11&amp;reff=MGEN33&amp;target</loc>
+    <lastmod>2025-06-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
-  
+
+  <!-- Bima Verification Page -->
   <url>
-    <loc>https://bimaonline.co.tz/passenger-vehicle</loc>
-    <lastmod>2025-04-15T11:22:18+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://bimaonline.co.tz/commercial-vehicle</loc>
-    <lastmod>2025-04-15T11:22:18+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-    <url>
-    <loc>https://bimaonline.co.tz/insurance-check</loc>
-    <lastmod>2025-04-15T11:22:18+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://bimaonline.co.tz/#faq</loc>
-    <lastmod>2025-04-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-      
-  <url>
-    <loc>https://bimaonline.co.tz/MotorInsuranceTips</loc>
-    <lastmod>2025-04-20</lastmod>
+    <loc>https://tiramis.tira.go.tz/</loc>
+    <lastmod>2025-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
+  <!-- Social Links (optional, usually excluded from sitemaps unless indexed) -->
+  <!--
   <url>
-    <loc>https://bimaonline.co.tz/LearnMore</loc>
-    <lastmod>2025-04-20</lastmod>
+    <loc>https://x.com/bimaonlinetz</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.3</priority>
   </url>
-      
+  -->
+
 </urlset>
