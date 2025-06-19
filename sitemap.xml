@@ -17,29 +17,4 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Bima Types (All lead to external site but listed for reference) -->
-  <url>
-    <loc>https://www.bimasokoni.co.tz/QuickQuote/QuickQuoteStartLeadDetails?id=11&amp;reff=MGEN33&amp;target</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Bima Verification Page -->
-  <url>
-    <loc>https://tiramis.tira.go.tz/</loc>
-    <lastmod>2025-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- Social Links (optional, usually excluded from sitemaps unless indexed) -->
-  <!--
-  <url>
-    <loc>https://x.com/bimaonlinetz</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  -->
-
 </urlset>
