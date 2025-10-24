@@ -308,6 +308,123 @@
       75% { transform: translateX(-5px); }
       100% { transform: translateX(0); }
     }
+.date {
+      font-size: 0.9rem;
+      color: #888;
+      margin-bottom: 30px;
+    }
+    .tip {
+      background: #f4f4f4;
+      border-left: 6px solid #3dbf79;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+    .tip h3 {
+      color: #231f20;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .tip:hover {
+      background-color: #c0fce0;
+      transition: 0.3s ease;
+    }
+    .medium-feed {
+      margin-top: 50px;
+    }
+    .medium-feed article {
+      margin-bottom: 20px;
+    }
+    .medium-feed h3 {
+      margin-bottom: 5px;
+      color: #231f20;
+    }
+    ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+    a.cta {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 28px;
+      background-color: #231f20;
+      color: #fff;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+    a.cta:hover {
+      background-color: #3dbf79;
+    }
+       .container {
+      max-width: 100%;
+      margin: 60px auto;
+      padding: 40px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+@media (max-width: 600px) {
+     .container {
+        padding: 24px;
+        margin: 30px 12px;
+      }
+      h1 {
+        font-size: 1.8rem;
+        text-decoration:#3dbf79;
+      }
+    } 
+
+      #medium-posts article {
+    background-color: #f9f9f9;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-left: 5px solid #4caf50;
+    border-radius: 6px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  #medium-posts article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  #medium-posts h3 a {
+    text-decoration: none;
+    color: #333;
+  }
+
+  .read-more {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    background-color: #4caf50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+
+  .read-more:hover {
+    background-color: #388e3c;
+  }
+
+  #loading-spinner {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+  }
+
+  #error-message {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+  }
+}
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <!-- AOS Library -->
@@ -522,77 +639,30 @@
         </a>
       </div>
     </div>
-  </section>
-  <section class="section" id="articles">
-    <!-- Swahili Content -->
-    <div class="lang-sw">
-      <h2 class="section-title" data-aos="fade-up">Makala za Bima</h2>
-      <div class="card-grid" id="articles-sw">
-        <div class="card" data-aos="fade-up" data-aos-delay="100">
-          <h3>Kwa nini Bima ya Gari ni Muhimu?</h3>
-          <p>Bima ya gari inakulinda wewe na mali zako dhidi ya hasara zinazoweza kutokea kutokana na ajali, moto au wizi. Soma zaidi kuhusu aina za bima unazoweza kuchagua.</p>
-          <a href="https://bimaonline.co.tz/MotorInsuranceTips" target="_blank" class="cta-button" style="background:#3dbf79;margin-top:10px;">Soma Zaidi</a>
-        </div>
-        <div class="card" data-aos="fade-up" data-aos-delay="200">
-          <h3>Jinsi ya Kudai Bima kwa Haraka</h3>
-          <p>Wateja wengi hukosea katika mchakato wa kudai bima. Jifunze hatua muhimu za kufuata ili kuhakikisha unapata fidia yako kwa wakati.</p>
-          <a href="https://bimaonline.co.tz/MotorInsuranceTips target="_blank" class="cta-button" style="background:#3dbf79;margin-top:10px;">Soma Zaidi</a>
-        </div>
-        <div class="card" data-aos="fade-up" data-aos-delay="300">
-          <h3>Tofauti Kati ya Bima Kamili na ya Wengine Tu</h3>
-          <p>Tambua tofauti kati ya bima kamili na bima ya upande wa tatu (third party) na ni ipi inafaa kwa mahitaji yako.</p>
-          <a href="https://bimaonline.co.tz/MotorInsuranceTips" target="_blank" class="cta-button" style="background:#3dbf79;margin-top:10px;">Soma Zaidi</a>
-        </div>
-        <div class="card" data-aos="fade-up" data-aos-delay="400">
-          <h3>Umuhimu wa Kuweka Rekodi Sahihi za Bima</h3>
-          <p>Rekodi bora za bima husaidia kurahisisha madai na kuepuka migogoro kati ya mteja na kampuni ya bima.</p>
-          <a href="https://bimaonline.co.tz/MotorInsuranceTips" target="_blank" class="cta-button" style="background:#3dbf79;margin-top:10px;">Soma Zaidi</a>
-        </div>
-      </div>
-    </div>
+   <div class="container" data-aos="fade-up">
 
-    <!-- English Content -->
-    <div class="lang-en">
-      <h2 class="section-title" data-aos="fade-up">Insurance Articles</h2>
-      <div class="card-grid" id="articles-en">
-        <div class="card" data-aos="fade-up" data-aos-delay="100">
-          <h3>Why Car Insurance Matters</h3>
-          <p>Car insurance protects you from unexpected financial loss due to accidents, fire, or theft. Learn about different coverage options available in Tanzania.</p>
-          <a href="https://bimaonline.co.tz/MotorInsuranceTips" target="_blank" class="cta-button" style="background:#3dbf79;margin-top:10px;">Read More</a>
-        </div>
-        <div class="card" data-aos="fade-up" data-aos-delay="200">
-          <h3>How to File a Claim Fast</h3>
-          <p>Many drivers make mistakes when filing a claim. Discover key steps to ensure you get your compensation without delays.</p>
-          <a href="https://bimaonline.co.tz/MotorInsuranceTips" target="_blank" class="cta-button" style="background:#3dbf79;margin-top:10px;">Read More</a>
-        </div>
-        <div class="card" data-aos="fade-up" data-aos-delay="300">
-          <h3>Comprehensive vs. Third-Party Insurance</h3>
-          <p>Understand the difference between comprehensive and third-party coverage — and which one is best for you.</p>
-          <a href="https://bimaonline.co.tz/MotorInsuranceTips" target="_blank" class="cta-button" style="background:#3dbf79;margin-top:10px;">Read More</a>
-        </div>
-        <div class="card" data-aos="fade-up" data-aos-delay="400">
-          <h3>The Role of Accurate Records in Claims</h3>
-          <p>Keeping proper insurance records makes it easier to process claims and avoid disputes with your insurer.</p>
-          <a href="https://bimaonline.co.tz/MotorInsuranceTips" target="_blank" class="cta-button" style="background:#3dbf79;margin-top:10px;">Read More</a>
-        </div>
-      </div>
+          <!-- <h1 data-aos="fade-down"> </i>Jifunze Mambo Muhimu Kuhusu Bima</h1> -->
+              <div class="lang-sw">
+      <h2 class="section-title" data-aos="fade-up">Jifunze Mambo Muhimu Kuhusu Bima</h2>
+    </div>
+    <p class="date" data-aos="fade-in" data-aos-delay="100" id="current-date"></p>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+        const now = new Date();
+        document.getElementById('current-date').textContent = `By BimaOnline • ${now.toLocaleDateString('en-US', options)}`;
+      });
+    </script>
+
+    <!-- Insurance tips content here... (same as before) -->
+
+    <h2 class="medium-feed" data-aos="fade-up"></h2>
+    <div id="medium-posts" data-aos="fade-up" data-aos-delay="100">Loading posts...</div>
     </div>
   </section>
-
-  <!-- JavaScript to Randomize Articles -->
-  <script>
-    function shuffleArticles(containerId) {
-      const container = document.getElementById(containerId);
-      const cards = Array.from(container.children);
-      const shuffled = cards.sort(() => Math.random() - 0.5);
-      container.innerHTML = '';
-      shuffled.slice(0, 3).forEach(card => container.appendChild(card));
-    }
-
-    // Randomize both Swahili and English article sections
-    shuffleArticles('articles-sw');
-    shuffleArticles('articles-en');
-  </script>
+  <div id="loading-spinner">Loading posts...</div>
+  <!-- AOS Animation Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
   <footer>
     <p style="font-size: 15px; color: rgb(184, 175, 175);" class="lang-sw">Powered by BimaSokoni Platform</p>
@@ -667,6 +737,46 @@
     // Initialize language when page loads
     document.addEventListener('DOMContentLoaded', initializeLanguage);
   </script>
+  <script>
+  async function fetchMediumPosts() {
+    const url = `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@bimaonline&_=${new Date().getTime()}`; // cache buster
+    const container = document.getElementById('medium-posts');
+    const loader = document.getElementById('loading-spinner');
+
+    try {
+      const res = await fetch(url);
+      const data = await res.json();
+
+      loader.style.display = 'none'; // hide loader once response received
+      container.innerHTML = '';
+
+      if (!data.items || data.items.length === 0) {
+        container.innerHTML = '<p>No posts found.</p>';
+        return;
+      }
+
+      data.items
+        .filter(post => post.categories && post.categories.length > 0)
+        .slice(0, 5)
+        .forEach(post => {
+            const article = document.createElement('article');
+            article.innerHTML = `
+            <h3><a href="${post.link}" target="_blank">${post.title}</a></h3>
+            <p style="font-size:1.2rem;">${post.description.slice(0, 400)}...</p>
+            <a href="${post.link}" target="_blank" class="read-more">Soma Zaidi...</a>
+            `;
+    container.appendChild(article);
+  });
+
+    } catch (error) {
+      loader.style.display = 'none'; // ensure we hide spinner even if there's an error
+      container.innerHTML = '<p>Failed to load Medium posts. Please try again later.</p>';
+      console.error('Error fetching Medium posts:', error);
+    }
+  }
+
+  fetchMediumPosts();
+</script>
 </body>
 
 </html>
